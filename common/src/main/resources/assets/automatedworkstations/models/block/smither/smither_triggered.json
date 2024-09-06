@@ -1,0 +1,9 @@
+{
+  "parent": "automatedworkstations:block/smither/smither",
+  "textures": {
+    "top": "automatedworkstations:block/smither/smither_top_triggered",
+    "south": "automatedworkstations:block/smither/smither_south_triggered",
+    "west": "automatedworkstations:block/smither/smither_west_triggered",
+    "east": "automatedworkstations:block/smither/smither_east_triggered"
+  }
+}

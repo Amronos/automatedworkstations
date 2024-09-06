@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}",
+        "Shotwave"
+    ],
+    "contact": {
+        "homepage": "https://modrinth.com/project/automatedworkstations",
+        "sources": "https://github.com/Amronos/automatedworkstations"
+    },
+    "license": "${license}",
+    "icon": "${mod_id}.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.amronos.automatedworkstations.AutomatedWorkstations"
+        ],
+        "client": [
+          "com.amronos.automatedworkstations.AutomatedWorkstationsClient"
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json",
+        "${mod_id}.fabric.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": "*",
+        "minecraft": ">=1.21",
+        "java": ">=${java_version}"
+    }
+}
+  

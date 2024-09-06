@@ -1,0 +1,9 @@
+{
+  "block.automatedworkstations.smither": "Smither",
+
+  "gui.automatedworkstations.smither.error_tooltip": "Item can't be upgraded this way. If you think this is a mistake reload the gui.",
+  "gui.automatedworkstations.smither.missing_template_tooltip": "Add Smithing Template. Click to disable slot.",
+  "gui.automatedworkstations.disable_slot_tooltip": "Click to disable slot.",
+
+  "itemGroup.automatedworkstations.automated_workstations": "Automated Workstations"
+}
