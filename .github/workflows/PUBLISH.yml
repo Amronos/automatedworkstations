@@ -42,23 +42,22 @@ jobs:
       - name: Publish (Fabric)
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          github-tag: v${{env.VERSION}}
+          github-tag: "v${{env.VERSION}}"
           github-generate-changelog: false
           github-draft: false
           github-prerelease: false
-          github-token: ${{env.PUBLISH_GITHUB_TOKEN}}
+          github-token: "${{env.PUBLISH_GITHUB_TOKEN}}"
 
           modrinth-id: g8vH5XKK
           modrinth-featured: false
-          modrinth-token: ${{env.PUBLISH_MODRINTH_TOKEN}}
+          modrinth-token: "${{env.PUBLISH_MODRINTH_TOKEN}}"
 
           curseforge-id: 1093054
-          curseforge-token: ${{env.PUBLISH_CURSEFORGE_TOKEN}}
+          curseforge-token: "${{env.PUBLISH_CURSEFORGE_TOKEN}}"
 
-          name: Automated Workstations - v${{env.VERSION}} - Fabric - ${{env.MINECRAFT_VERSION}}
-          version: ${{env.VERSION}}
-          version-type: ${{env.VERSION_TYPE}}
-          changelog: ${{env.CHANGELOG}}
+          name: "Automated Workstations - v${{env.VERSION}} - Fabric - ${{env.MINECRAFT_VERSION}}"
+          version: "${{env.VERSION}}"
+          version-type: "${{env.VERSION_TYPE}}"
           changelog-file: CHANGELOG.md
           game-version-filter: releases
 
@@ -69,25 +68,25 @@ jobs:
       - name: Publish (Neoforge)
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          github-tag: v${{env.VERSION}}
+          github-tag: "v${{env.VERSION}}"
           github-generate-changelog: false
           github-draft: false
           github-prerelease: false
-          github-token: ${{env.PUBLISH_GITHUB_TOKEN}}
+          github-token: "${{env.PUBLISH_GITHUB_TOKEN}}"
 
           modrinth-id: g8vH5XKK
           modrinth-featured: false
-          modrinth-token: ${{env.PUBLISH_MODRINTH_TOKEN}}
+          modrinth-token: "${{env.PUBLISH_MODRINTH_TOKEN}}"
 
           curseforge-id: 1093054
-          curseforge-token: ${{env.PUBLISH_CURSEFORGE_TOKEN}}
+          curseforge-token: "${{env.PUBLISH_CURSEFORGE_TOKEN}}"
 
-          name: Automated Workstations - v${{env.VERSION}} - Neoforge - ${{env.MINECRAFT_VERSION}}
-          version: ${{env.VERSION}}
-          version-type: ${{env.VERSION_TYPE}}
+          name: "Automated Workstations - v${{env.VERSION}} - Neoforge - ${{env.MINECRAFT_VERSION}}"
+          version: "${{env.VERSION}}"
+          version-type: "${{env.VERSION_TYPE}}"
           changelog-file: CHANGELOG.md
           game-version-filter: releases
 
-          loaders: fabric
+          loaders: neoforge
 
-          files: build/libs/automatedworkstations-neoforge-${{env.MINECRAFT_VERSION}}-${{env.VERSION}}.jar
+          files: "build/libs/automatedworkstations-neoforge-${{env.MINECRAFT_VERSION}}-${{env.VERSION}}.jar"
