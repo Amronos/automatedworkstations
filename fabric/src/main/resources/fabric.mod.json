@@ -21,6 +21,12 @@
         ],
         "client": [
           "com.amronos.automatedworkstations.AutomatedWorkstationsClient"
+        ],
+        "emi": [
+            "com.amronos.automatedworkstations.AutomatedWorkstationsEmiPlugin"
+        ],
+        "jei_mod_plugin": [
+            "com.amronos.automatedworkstations.AutomatedWorkstationsJeiPlugin"
         ]
     },
     "mixins": [
