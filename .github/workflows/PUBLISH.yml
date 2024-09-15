@@ -40,7 +40,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Publish (Fabric)
-        uses: Kir-Antipov/mc-publish@v3.2
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           github-tag: v${{env.VERSION}}
           github-generate-changelog: false
@@ -67,7 +67,7 @@ jobs:
           files: build/libs/automatedworkstations-fabric-${{env.MINECRAFT_VERSION}}-${{env.VERSION}}.jar
 
       - name: Publish (Neoforge)
-        uses: Kir-Antipov/mc-publish@v3.2
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           github-tag: v${{env.VERSION}}
           github-generate-changelog: false
