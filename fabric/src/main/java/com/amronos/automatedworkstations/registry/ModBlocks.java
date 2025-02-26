@@ -1,6 +1,7 @@
 package com.amronos.automatedworkstations.registry;
 
 import com.amronos.automatedworkstations.Constants;
+import com.amronos.automatedworkstations.block.AnvilatorBlock;
 import com.amronos.automatedworkstations.block.SmitherBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -24,5 +25,6 @@ public class ModBlocks {
     public static void registerModBlocks() {
     }
 
+    public static final Block ANVILATOR = registerModBlocks("anvilator", new AnvilatorBlock(BlockBehaviour.Properties.of()));
     public static final Block SMITHER = registerModBlocks("smither", new SmitherBlock(BlockBehaviour.Properties.of()));
 }

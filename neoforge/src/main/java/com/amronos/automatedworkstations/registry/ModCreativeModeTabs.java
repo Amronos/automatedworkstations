@@ -15,8 +15,9 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> AUTOMATED_WORKSTATIONS = CREATIVE_MODE_TABS.register("automated_workstations", () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".automated_workstations"))
-                    .icon(() -> new ItemStack(ModBlocks.SMITHER))
+                    .icon(() -> new ItemStack(ModBlocks.ANVILATOR))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.ANVILATOR);
                         output.accept(ModBlocks.SMITHER);
                     })
                     .build());
