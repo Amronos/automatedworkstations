@@ -4,10 +4,10 @@ import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
-public class CommonSmitherSlot extends Slot {
-    protected final CommonSmitherMenu menu;
+public class CommonAutomatedWorkstationSlot extends Slot {
+    protected final CommonAutomatedWorkstationMenu menu;
 
-    public CommonSmitherSlot(Container container, int slot, int x, int y, CommonSmitherMenu menu) {
+    public CommonAutomatedWorkstationSlot(Container container, int slot, int x, int y, CommonAutomatedWorkstationMenu menu) {
         super(container, slot, x, y);
         this.menu = menu;
     }

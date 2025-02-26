@@ -1,7 +1,7 @@
 package com.amronos.automatedworkstations.mixin;
 
-import com.amronos.automatedworkstations.block.entity.CommonSmitherBlockEntity;
-import com.amronos.automatedworkstations.inventory.CommonSmitherMenu;
+import com.amronos.automatedworkstations.block.entity.CommonAutomatedWorkstationBlockEntity;
+import com.amronos.automatedworkstations.inventory.CommonAutomatedWorkstationMenu;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.network.protocol.game.ServerboundContainerSlotStateChangedPacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,8 +21,8 @@ public class MixinServerGamePacketListenerImpl {
     @Inject(at = @At("TAIL"), method = "handleContainerSlotStateChanged")
     public void handleContainerSlotStateChanged(CallbackInfo info, @Local(argsOnly = true) ServerboundContainerSlotStateChangedPacket pPacket) {
         if (!this.player.isSpectator() && pPacket.containerId() == this.player.containerMenu.containerId) {
-            if (this.player.containerMenu instanceof CommonSmitherMenu smithermenu && smithermenu.getContainer() instanceof CommonSmitherBlockEntity smitherblockentity) {
-                smitherblockentity.setSlotState(pPacket.slotId(), pPacket.newState());
+            if (this.player.containerMenu instanceof CommonAutomatedWorkstationMenu automatedworkstationmenu && automatedworkstationmenu.getContainer() instanceof CommonAutomatedWorkstationBlockEntity automatedworkstationblockentity) {
+                automatedworkstationblockentity.setSlotState(pPacket.slotId(), pPacket.newState());
             }
         }
     }
