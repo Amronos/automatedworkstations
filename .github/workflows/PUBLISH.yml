@@ -5,7 +5,7 @@ on: [ workflow_dispatch ]
 env:
   MINECRAFT_VERSION: 1.21
   JAVA_VERSION: 21
-  VERSION: 0.1.1
+  VERSION: 0.1.2
   VERSION_TYPE: release
   PUBLISH_GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
   PUBLISH_MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
@@ -58,7 +58,7 @@ jobs:
           name: "Automated Workstations - v${{env.VERSION}} - Fabric - ${{env.MINECRAFT_VERSION}}"
           version: "${{env.VERSION}}"
           version-type: "${{env.VERSION_TYPE}}"
-          changelog-file: CHANGELOG.md
+          changelog-file: LATEST_CHANGELOG.md
           game-version-filter: releases
 
           loaders: fabric
