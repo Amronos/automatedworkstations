@@ -20,12 +20,11 @@ public abstract class CommonSmitherMenu extends CommonAutomatedWorkstationMenu {
     public static final int TEMPLATE_SLOT_X_PLACEMENT = 8;
     public static final int BASE_SLOT_X_PLACEMENT = 26;
     public static final int ADDITIONAL_SLOT_X_PLACEMENT = 44;
-    private static final int RESULT_SLOT_X_PLACEMENT = 98;
+    private static final int RESULT_SLOT_X_PLACEMENT = 102;
     public static final int SLOT_Y_PLACEMENT = 48;
     private final ContainerData containerData;
     private final Container container;
     private final Level level;
-    private final ResultContainer resultContainer = new ResultContainer();
     private final int resultSlotIndex;
     private final List<RecipeHolder<SmithingRecipe>> recipes;
 

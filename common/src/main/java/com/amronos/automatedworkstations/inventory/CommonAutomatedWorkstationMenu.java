@@ -7,7 +7,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 
 public abstract class CommonAutomatedWorkstationMenu extends AbstractContainerMenu implements ContainerListener {
-    private final ResultContainer resultContainer = new ResultContainer();
+    protected final ResultContainer resultContainer = new ResultContainer();
 
     public CommonAutomatedWorkstationMenu(MenuType<?> menuType, int containerId) {
         super(menuType, containerId);
@@ -133,9 +133,7 @@ public abstract class CommonAutomatedWorkstationMenu extends AbstractContainerMe
     @Override
     public void slotsChanged(Container inventory) {
         super.slotsChanged(inventory);
-        if (inventory == this.getContainerData()) {
-            this.createResult();
-        }
+        this.createResult();
     }
 
     /**
