@@ -97,7 +97,8 @@ public class CommonSmitherScreen extends CommonAutomatedWorkstationScreen<Common
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         super.renderBg(guiGraphics, partialTick, mouseX, mouseY);
-        this.renderErrorIcon(guiGraphics, this.leftPos, this.topPos);
+        this.renderErrorIcon(guiGraphics);
+        this.updateArmorStandPreview(this.menu.getSlot(this.menu.getResultSlot()).getItem());
         this.templateIcon.render(this.menu, guiGraphics, partialTick, this.leftPos, this.topPos);
         this.baseIcon.render(this.menu, guiGraphics, partialTick, this.leftPos, this.topPos);
         this.additionalIcon.render(this.menu, guiGraphics, partialTick, this.leftPos, this.topPos);
@@ -109,10 +110,9 @@ public class CommonSmitherScreen extends CommonAutomatedWorkstationScreen<Common
     /**
      * Sends the contents of an inventory slot to the client-side Container. This doesn't have to match the actual contents of that slot.
      */
+    @Override
     public void slotChanged(AbstractContainerMenu containerToSend, int slotIndex, ItemStack stack) {
-        if (slotIndex == this.menu.getResultSlot()) {
-            this.updateArmorStandPreview(stack);
-        }
+        this.updateArmorStandPreview(this.menu.getSlot(this.menu.getResultSlot()).getItem());
     }
 
     private void updateArmorStandPreview(ItemStack stack) {
@@ -133,9 +133,9 @@ public class CommonSmitherScreen extends CommonAutomatedWorkstationScreen<Common
         }
     }
 
-    protected void renderErrorIcon(GuiGraphics guiGraphics, int X, int Y) {
+    protected void renderErrorIcon(GuiGraphics guiGraphics) {
         if (this.hasRecipeError()) {
-            guiGraphics.blitSprite(ERROR_SPRITE, X + 65, Y + 45, 28, 21);
+            guiGraphics.blitSprite(ERROR_SPRITE, this.leftPos + 65, this.topPos + 45, 28, 21);
         }
     }
 
@@ -172,9 +172,9 @@ public class CommonSmitherScreen extends CommonAutomatedWorkstationScreen<Common
     }
 
     private boolean hasRecipeError() {
-        return this.menu.getSlot(CommonSmitherMenu.TEMPLATE_SLOT).hasItem()
-                && this.menu.getSlot(CommonSmitherMenu.BASE_SLOT).hasItem()
-                && this.menu.getSlot(CommonSmitherMenu.ADDITIONAL_SLOT).hasItem()
+        return (this.menu.getSlot(CommonSmitherMenu.TEMPLATE_SLOT).hasItem() || this.menu.isSlotDisabled(CommonSmitherMenu.TEMPLATE_SLOT))
+                && (this.menu.getSlot(CommonSmitherMenu.BASE_SLOT).hasItem() || this.menu.isSlotDisabled(CommonSmitherMenu.BASE_SLOT))
+                && (this.menu.getSlot(CommonSmitherMenu.ADDITIONAL_SLOT).hasItem() || this.menu.isSlotDisabled(CommonSmitherMenu.ADDITIONAL_SLOT))
                 && !this.menu.getSlot(this.menu.getResultSlot()).hasItem();
     }
 
