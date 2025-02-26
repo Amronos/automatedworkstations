@@ -125,14 +125,14 @@ public class CommonAnvilatorScreen extends CommonAutomatedWorkstationScreen<Comm
     @Override
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         super.renderBg(guiGraphics, partialTick, mouseX, mouseY);
-        this.renderErrorIcon(guiGraphics, this.leftPos, this.topPos);
+        this.renderErrorIcon(guiGraphics);
         guiGraphics.blitSprite(this.menu.getSlot(CommonAnvilatorMenu.INPUT_SLOT).hasItem() ? TEXT_FIELD_SPRITE : TEXT_FIELD_DISABLED_SPRITE, this.leftPos + 59, this.topPos + 20, 110, 16);
         this.name.render(guiGraphics, mouseX, mouseY, partialTick);
     }
 
-    protected void renderErrorIcon(GuiGraphics guiGraphics, int x, int y) {
+    protected void renderErrorIcon(GuiGraphics guiGraphics) {
         if ((this.menu.getSlot(CommonAnvilatorMenu.INPUT_SLOT).hasItem() || this.menu.getSlot(CommonAnvilatorMenu.ADDITIONAL_SLOT).hasItem()) && !this.menu.getSlot(this.menu.getResultSlot()).hasItem()) {
-            guiGraphics.blitSprite(ERROR_SPRITE, x + 99, y + 45, 28, 21);
+            guiGraphics.blitSprite(ERROR_SPRITE, this.leftPos + 99, this.topPos + 45, 28, 21);
         }
     }
 

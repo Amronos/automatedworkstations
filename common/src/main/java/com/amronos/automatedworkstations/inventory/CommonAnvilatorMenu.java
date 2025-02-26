@@ -22,7 +22,6 @@ public abstract class CommonAnvilatorMenu extends CommonAutomatedWorkstationMenu
     private final ContainerData containerData;
     private final Container container;
     private final Level level;
-    private final ResultContainer resultContainer = new ResultContainer();
     private final int resultSlotIndex;
     public static final int INPUT_SLOT = 0;
     public static final int ADDITIONAL_SLOT = 1;
@@ -87,7 +86,7 @@ public abstract class CommonAnvilatorMenu extends CommonAutomatedWorkstationMenu
                     + (long) additionalStack.getOrDefault(DataComponents.REPAIR_COST, 0);
             this.repairItemCountCost = 0;
             if (!additionalStack.isEmpty()) {
-                boolean flag = additionalStack.has(DataComponents.STORED_ENCHANTMENTS);
+                boolean additionalStackHasEnchants = additionalStack.has(DataComponents.STORED_ENCHANTMENTS);
                 if (resultStack.isDamageableItem() && resultStack.getItem().isValidRepairItem(inputStack, additionalStack)) {
                     int l2 = Math.min(resultStack.getDamageValue(), resultStack.getMaxDamage() / 4);
                     if (l2 <= 0) {
@@ -107,13 +106,13 @@ public abstract class CommonAnvilatorMenu extends CommonAutomatedWorkstationMenu
                 }
 
                 else {
-                    if (!flag && (!resultStack.is(additionalStack.getItem()) || !resultStack.isDamageableItem())) {
+                    if (!additionalStackHasEnchants && (!resultStack.is(additionalStack.getItem()) || !resultStack.isDamageableItem())) {
                         resultStack = ItemStack.EMPTY;
                         this.cost.set(COST_FAIL);
                     }
 
                     else {
-                        if (resultStack.isDamageableItem() && !flag) {
+                        if (resultStack.isDamageableItem() && !additionalStackHasEnchants) {
                             int l = inputStack.getMaxDamage() - inputStack.getDamageValue();
                             int i1 = additionalStack.getMaxDamage() - additionalStack.getDamageValue();
                             int j1 = i1 + resultStack.getMaxDamage() * 12 / 100;
@@ -161,7 +160,7 @@ public abstract class CommonAnvilatorMenu extends CommonAutomatedWorkstationMenu
 
                                 itemenchantments$mutable.set(holder, j2);
                                 int l3 = enchantment.getAnvilCost();
-                                if (flag) {
+                                if (additionalStackHasEnchants) {
                                     l3 = Math.max(1, l3 / 2);
                                 }
 
@@ -209,9 +208,9 @@ public abstract class CommonAnvilatorMenu extends CommonAutomatedWorkstationMenu
                 }
 
                 if (!resultStack.isEmpty()) {
-                    int i3 = resultStack.getOrDefault(DataComponents.REPAIR_COST, Integer.valueOf(0));
-                    if (i3 < additionalStack.getOrDefault(DataComponents.REPAIR_COST, Integer.valueOf(0))) {
-                        i3 = additionalStack.getOrDefault(DataComponents.REPAIR_COST, Integer.valueOf(0));
+                    int i3 = resultStack.getOrDefault(DataComponents.REPAIR_COST, 0);
+                    if (i3 < additionalStack.getOrDefault(DataComponents.REPAIR_COST, 0)) {
+                        i3 = additionalStack.getOrDefault(DataComponents.REPAIR_COST, 0);
                     }
 
                     if (k != i || k == 0) {
