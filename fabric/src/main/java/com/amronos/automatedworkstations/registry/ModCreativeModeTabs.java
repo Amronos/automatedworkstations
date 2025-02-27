@@ -7,9 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-
-import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
     public static void registerCreativeModeTabs(){
@@ -20,6 +17,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".automated_workstations"))
                     .icon(() -> new ItemStack(ModBlocks.SMITHER))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.ANVILATOR);
                         output.accept(ModBlocks.SMITHER);
                     })
                     .build());

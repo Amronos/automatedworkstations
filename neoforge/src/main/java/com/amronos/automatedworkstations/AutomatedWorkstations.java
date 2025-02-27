@@ -1,6 +1,7 @@
 package com.amronos.automatedworkstations;
 
 
+import com.amronos.automatedworkstations.inventory.CommonAnvilatorScreen;
 import com.amronos.automatedworkstations.inventory.CommonSmitherScreen;
 import com.amronos.automatedworkstations.registry.*;
 import net.neoforged.api.distmarker.Dist;
@@ -25,6 +26,7 @@ public class AutomatedWorkstations {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void registerMenuScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.ANVILATOR_MENU.get(), CommonAnvilatorScreen::new);
             event.register(ModMenuTypes.SMITHER_MENU.get(), CommonSmitherScreen::new);
         }
     }

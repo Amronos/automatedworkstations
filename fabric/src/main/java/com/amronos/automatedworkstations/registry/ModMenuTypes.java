@@ -1,6 +1,7 @@
 package com.amronos.automatedworkstations.registry;
 
 import com.amronos.automatedworkstations.Constants;
+import com.amronos.automatedworkstations.inventory.AnvilatorMenu;
 import com.amronos.automatedworkstations.inventory.SmitherMenu;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,5 +15,6 @@ public class ModMenuTypes {
     public static void registerModMenuTypes() {
     }
 
+    public static final MenuType<?> ANVILATOR_MENU = registerModMenuTypes("anvilator_menu", AnvilatorMenu.MENU_TYPE);
     public static final MenuType<?> SMITHER_MENU = registerModMenuTypes("smither_menu", SmitherMenu.MENU_TYPE);
 }

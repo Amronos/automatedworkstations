@@ -1,4 +1,5 @@
 {
+  "block.automatedworkstations.anvilator": "Anvilator",
   "block.automatedworkstations.smither": "Smither",
 
   "gui.automatedworkstations.smither.error_tooltip": "Item can't be upgraded this way. If you think this is a mistake reload the gui.",
