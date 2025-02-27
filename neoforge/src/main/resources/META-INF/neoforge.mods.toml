@@ -11,8 +11,9 @@ updateJSONURL="https://api.modrinth.com/updates/g8vH5XKK/neoforge_updates.json"
 displayURL="https://modrinth.com/project/automatedworkstations"
 logoFile="${mod_id}.png"
 credits="${credits}"
-authors = "${mod_author}"
+authors = "${mod_author}, Shotwave"
 description = '''${description}'''
+modUrl = "https://modrinth.com/project/automatedworkstations"
 
 [[mixins]]
 config = "${mod_id}.mixins.json"
@@ -22,7 +23,7 @@ config = "${mod_id}.neoforge.mixins.json"
 [[dependencies.${mod_id}]]
 modId = "neoforge"
 type="required"
-versionRange = "[${neoforge_version},)" #mandatory
+versionRange = "[${neoforge_version},)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.${mod_id}]]
@@ -31,3 +32,21 @@ type="required"
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies.${mod_id}]]
+modId = "emi"
+type="optional"
+versionRange = "[${emi_version},)"
+ordering = "AFTER"
+side = "CLIENT"
+[[dependencies.${mod_id}]]
+modId = "jei"
+type="optional"
+versionRange = "[${jei_version},)"
+ordering = "AFTER"
+side = "CLIENT"
+[[dependencies.${mod_id}]]
+modId = "jei"
+type="optional"
+versionRange = "[${jei_version},)"
+ordering = "AFTER"
+side = "CLIENT"

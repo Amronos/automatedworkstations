@@ -84,7 +84,7 @@ jobs:
           name: "Automated Workstations - v${{env.VERSION}} - Neoforge - ${{env.MINECRAFT_VERSION}}"
           version: "${{env.VERSION}}"
           version-type: "${{env.VERSION_TYPE}}"
-          changelog-file: CHANGELOG.md
+          changelog-file: LATEST_CHANGELOG.md
           game-version-filter: releases
 
           loaders: neoforge

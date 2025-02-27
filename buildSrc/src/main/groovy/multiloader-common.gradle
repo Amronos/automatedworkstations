@@ -108,7 +108,8 @@ processResources {
             'credits'                      : credits,
             'java_version'                 : java_version,
             'emi_version'                  : emi_version,
-            'jei_version'                  : jei_version
+            'jei_version'                  : jei_version,
+            'modmenu_version'              : modmenu_version
     ]
 
     var jsonExpandProps = expandProps.collectEntries {

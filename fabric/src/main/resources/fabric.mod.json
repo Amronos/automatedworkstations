@@ -9,7 +9,9 @@
         "Shotwave"
     ],
     "contact": {
+        "email": "amronos275@gmail.com",
         "homepage": "https://modrinth.com/project/automatedworkstations",
+        "issues": "https://github.com/Amronos/automatedworkstations/issues",
         "sources": "https://github.com/Amronos/automatedworkstations"
     },
     "license": "${license}",
@@ -36,8 +38,24 @@
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",
         "fabric-api": "*",
-        "minecraft": ">=1.21",
+        "minecraft": "${minecraft_version}",
         "java": ">=${java_version}"
+    },
+    "suggests": {
+        "emi": "${emi_version}",
+        "jei": "${jei_version}",
+        "modmenu": "${modmenu_version}"
+    },
+    "custom": {
+        "modmenu": {
+            "links": {
+                "modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/automated-workstations",
+                "modmenu.discord": "https://discord.com/invite/kS3crKaryx",
+                "modmenu.donate": "https://ko-fi.com/amronos",
+                "modmenu.kofi": "https://ko-fi.com/amronos",
+                "modmenu.modrinth": "https://modrinth.com/mod/automatedworkstations"
+            },
+            "update_checker": true
+        }
     }
 }
-  
